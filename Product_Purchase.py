@@ -8,9 +8,12 @@ class Purchase_mobile():
     def __init__(self,driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
-        self.device1 = (By.LINK_TEXT, "Samsung galaxy s6")
-        self.Addtocart = (By.XPATH, "//*[@id='tbodyid']/div[2]/div/a")
+        self.laptop = (By.XPATH, "(//a[normalize-space()='Laptops'])[1]")
+        self.sony = (By.XPATH, "//a[normalize-space()='Sony vaio i5']")
+        self.Addtocart = (By.XPATH, "//a[normalize-space()='Add to cart']")
 
     def mobiledevice(self):
-        self.wait.until(EC.element_to_be_clickable)(self.device1).click()
+        self.wait.until(EC.element_to_be_clickable)(self.laptop).click()
+        self.wait.until(EC.element_to_be_clickable)(self.sony).click()
         self.wait.until(EC.element_to_be_clickable)(self.Addtocart).click()
+ 
